@@ -3,49 +3,95 @@
     <title>Tower of Hanoi VR</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r134/examples/js/deprecated/Geometry.js"></script>
+    <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="primitives/disc.js"></script>
   </head>
   <body>
-    <a-scene physics="debug: true; iterations: 20">
+    <a-scene physics="driver: ammo">
       <!-- This height at 1.3 is currently set for debugging. Set back to 1.6 later. -->
-      <a-camera position="0 1.3 0.5" id="camera"></a-camera>
+      <a-camera position="0 140 50" id="camera"></a-camera>
+      <!-- ammo-shape="type: box; fit: manual; halfExtents: 0.48 0.13 0.13" -->
       <a-box
-        width="1"
-        height="0.3"
-        depth="0.3"
-        position="0 1 0"
+        width="100"
+        height="30"
+        depth="30"
+        position="0 100 0"
         color="red"
-        static-body
+        ammo-body="type: static"
+        ammo-shape="type: box"
       ></a-box>
       <a-cylinder
-        height="0.4"
-        radius="0.01"
-        position="-0.3 1.25 0"
+        height="30"
+        radius="1"
+        position="-30 130 0"
         color="blue"
-        static-body
       ></a-cylinder>
       <a-cylinder
-        height="0.4"
-        radius="0.01"
-        position="0 1.25 0"
+        height="30"
+        radius="1"
+        position="0 130 0"
         color="blue"
-        static-body
       ></a-cylinder>
       <a-cylinder
-        height="0.4"
-        radius="0.01"
-        position="0.3 1.25 0"
+        height="30"
+        radius="1"
+        position="30 130 0"
         color="blue"
-        static-body
       ></a-cylinder>
       <a-disc
-        inner-radius="0.012"
-        outer-radius="0.05"
-        thickness="0.01"
-        position="0 1.5 0"
+        inner-radius="1.2"
+        outer-radius="14"
+        thickness="2"
+        position="-30 120 0"
         color="green"
-        dynamic-body
+        ammo-body="type: dynamic"
+        ammo-shape="type: box; fit: manual; halfExtents: 14 1 14"
+      ></a-disc>
+      <a-disc
+        inner-radius="1.2"
+        outer-radius="12"
+        thickness="2"
+        position="-30 130 0"
+        color="green"
+        ammo-body="type: dynamic"
+        ammo-shape="type: box; fit: manual; halfExtents: 12 1 12"
+      ></a-disc>
+      <a-disc
+        inner-radius="1.2"
+        outer-radius="10"
+        thickness="2"
+        position="-30 140 0"
+        color="green"
+        ammo-body="type: dynamic"
+        ammo-shape="type: box; fit: manual; halfExtents: 10 1 10"
+      ></a-disc>
+      <a-disc
+        inner-radius="1.2"
+        outer-radius="8"
+        thickness="2"
+        position="-30 150 0"
+        color="green"
+        ammo-body="type: dynamic"
+        ammo-shape="type: box; fit: manual; halfExtents: 8 1 8"
+      ></a-disc>
+      <a-disc
+        inner-radius="1.2"
+        outer-radius="6"
+        thickness="2"
+        position="-30 160 0"
+        color="green"
+        ammo-body="type: dynamic"
+        ammo-shape="type: box; fit: manual; halfExtents: 6 1 6"
+      ></a-disc>
+      <a-disc
+        inner-radius="1.2"
+        outer-radius="4"
+        thickness="2"
+        position="-30 170 0"
+        color="green"
+        ammo-body="type: dynamic"
+        ammo-shape="type: box; fit: manual; halfExtents: 4 1 4"
       ></a-disc>
     </a-scene>
   </body>
